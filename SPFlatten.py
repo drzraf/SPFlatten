@@ -88,7 +88,7 @@ class Flattener:
         elif re.match(r'^ptr.*$', mechanism):
             logger.debug("PTR found for %s:%s", self.domain, mechanism)
             self.spf_nonflat_mechanisms.append(mechanism)
-        elif re.match(r'^exists:$', mechanism):
+        elif re.match(r'^exists:.*$', mechanism):
             logger.debug("Exists found for %s:%s", self.domain, mechanism)
             self.spf_nonflat_mechanisms.append(mechanism)
         elif re.match(r'^redirect(?:[=:]) ?(.*)$', mechanism):
